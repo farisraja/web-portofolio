@@ -53,6 +53,13 @@ const projectEnhancements: Record<string, { displayName: string; description: st
     techStack: ['HTML', 'CSS', 'JavaScript'],
     icon: 'fa-solid fa-globe',
   },
+  'web-portofolio': {
+    displayName: 'Futuristic Web Portfolio',
+    description: 'A futuristic, high-performance personal portfolio built with Next.js 16. Features a Glassmorphism UI, Dark/Light mode, Supabase authentication, and live GitHub API integration.',
+    category: 'Web Application',
+    techStack: ['TypeScript', 'Next.js', 'Supabase'],
+    icon: 'fa-solid fa-laptop-code',
+  },
 };
 
 export default async function Projects() {
