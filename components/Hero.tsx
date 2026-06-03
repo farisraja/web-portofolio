@@ -27,7 +27,7 @@ export default function Hero() {
             
             <div className="hero-visual">
                 <div className="portrait-frame">
-                    <img src="/profile-photo.JPEG" alt="Foto Faris Raja Ardana" className="portrait-img" />
+                    <img src="/profile-photo.jpeg" alt="Foto Faris Raja Ardana" className="portrait-img" />
                     <div className="frame-glow"></div>
                 </div>
                 
