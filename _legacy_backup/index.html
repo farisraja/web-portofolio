@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faris | Tech Portfolio</title>
+    <!-- Google Fonts: Poppins untuk Heading, Inter untuk Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome untuk floating icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar Glassmorphism -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Faris<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#sertifikat">Sertifikat</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="glow-orb"></div>
+        <div class="container hero-content">
+            <!-- Sisi Kiri: Teks -->
+            <div class="hero-text">
+                <h1 class="headline">Halo, saya Faris.</h1>
+                <p class="subtitle">Lulusan Ilmu Komputer yang antusias membangun solusi digital, dengan fokus pada Keamanan Jaringan dan Analisis Data Mining.</p>
+                <a href="#project" class="btn btn-primary">VIEW MY PROJECT</a>
+            </div>
+            
+            <!-- Sisi Kanan: Visual 3D -->
+            <div class="hero-visual">
+                <div class="portrait-frame">
+                    <img src="https://via.placeholder.com/400x400/1e1e1e/8c8c8c?text=Foto+Profil" alt="Foto Faris" class="portrait-img">
+                    <div class="frame-glow"></div>
+                </div>
+                
+                <!-- Floating Icons representasi Keahlian -->
+                <div class="floating-icon icon-shield">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="floating-icon icon-cube">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <div class="floating-icon icon-code">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="about-skills-section">
+        <div class="container about-skills-content">
+            <!-- Sisi Kiri: Teks About -->
+            <div class="about-text">
+                <h2 class="section-title">About Me.</h2>
+                <p class="about-description">
+                    Lulusan Ilmu Komputer dari <strong>Universitas Pakuan</strong>. Pernah aktif di IEEE dan memiliki minat mendalam pada keamanan siber serta algoritma pemrosesan data.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Ilmu Komputer</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Cybersecurity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sisi Kanan: Grid Skills -->
+            <div id="skills" class="skills-grid-container">
+                <div class="skills-glow"></div>
+                <div class="skills-grid">
+                    <!-- Keamanan Jaringan -->
+                    <div class="skill-card">
+                        <div class="skill-icon icon-cyan" style="animation-delay: 0s;">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3>Network Security</h3>
+                        <p>Cisco CyberOps, Wireshark, Nmap, Kali Linux</p>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="skill-card">
+                        <div class="skill-icon icon-purple" style="animation-delay: 1.5s;">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Next.js, Tailwind CSS</p>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div class="skill-card">
+                        <div class="skill-icon icon-blue" style="animation-delay: 3s;">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3>Data/Algorithms</h3>
+                        <p>Visualisasi Data, Processing Algoritma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Section -->
+    <section id="project" class="project-section">
+        <!-- Latar belakang partikel/cahaya -->
+        <div class="project-bg-glow"></div>
+        <div class="project-particles"></div>
+
+        <div class="container">
+            <h2 class="section-title text-center">My Projects.</h2>
+            
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <div class="visual-glow glow-blue"></div>
+                        <i class="fa-solid fa-chart-line float-anim project-icon"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Analisis Pola Data dengan Apriori & FP-Growth</h3>
+                        <p>Penelitian algoritma data mining untuk menemukan pola pembelian dalam dataset yang padat.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Data Mining</span>
+                        </div>
+                        <a href="#" class="btn-github"><i class="fa-brands fa-github"></i> Lihat di GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <div class="visual-glow glow-cyan"></div>
+                        <i class="fa-solid fa-shield-virus float-anim-alt project-icon"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Eksplorasi Keamanan Jaringan</h3>
+                        <p>Analisis kerentanan jaringan dan konfigurasi keamanan dengan Cisco Packet Tracer dan Wireshark.</p>
+                        <div class="project-tags">
+                            <span>Cisco</span>
+                            <span>CyberSecurity</span>
+                        </div>
+                        <a href="#" class="btn-github"><i class="fa-brands fa-github"></i> Lihat di GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <div class="visual-glow glow-purple"></div>
+                        <i class="fa-solid fa-window-maximize float-anim project-icon"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Web Modern</h3>
+                        <p>Desain UI/UX tingkat tinggi menggunakan mode gelap, glassmorphism, dan animasi interaktif 3D.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                        <a href="#" class="btn-github"><i class="fa-brands fa-github"></i> Lihat di GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikat Section -->
+    <section id="sertifikat" class="cert-section">
+        <div class="container">
+            <h2 class="section-title text-center">Certifications.</h2>
+            <div class="cert-container">
+                <!-- Cert 1 -->
+                <div class="cert-card">
+                    <div class="cert-badge badge-gold">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h3>TOEFL Certification</h3>
+                        <p>Bahasa Inggris Profesional</p>
+                    </div>
+                </div>
+                <!-- Cert 2 -->
+                <div class="cert-card">
+                    <div class="cert-badge badge-blue">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h3>Microsoft Office Specialist</h3>
+                        <p>Pengolahan Data Tingkat Lanjut</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-header">
+                <h2 class="section-title">Get In Touch.</h2>
+                <p>Mencari talenta digital berbakat? Silakan tinggalkan pesan untuk mendiskusikan peluang karir terhebat Anda!</p>
+                <div class="social-3d-icons">
+                    <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama Anda" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Terhubung" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tuliskan Pesan..." rows="4" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Kirim Pesan <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Faris. Designed for Future Tech.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
