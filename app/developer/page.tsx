@@ -30,29 +30,29 @@ export default async function DeveloperDashboard() {
             <h1 className="section-title" style={{ marginBottom: 0, fontSize: '2.5rem' }}>Developer Terminal.</h1>
             <form action={logout}>
                 <button type="submit" className="btn btn-primary" style={{ background: 'linear-gradient(90deg, #ff4d4f, #ff7875)', boxShadow: '0 4px 15px rgba(255, 77, 79, 0.3)', border: 'none', cursor: 'pointer' }}>
-                    <i className="fa-solid fa-right-from-bracket"></i> Tutup Sesi & Kunci
+                    <i className="fa-solid fa-right-from-bracket"></i> Close Session & Lock
                 </button>
             </form>
         </div>
 
         <div className="project-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', marginBottom: '4rem' }}>
             <div className="contact-form" style={{ padding: '2rem' }}>
-                <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}><i className="fa-solid fa-server" style={{ color: 'var(--primary-blue)', marginRight: '10px' }}></i> Sistem Inti</h3>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.6' }}>Selamat datang kembali hacker, <strong style={{color: 'var(--primary-blue)'}}>{user.email}</strong>. Anda berada di zona eksklusif. Kendali penuh sistem portofolio ada di tangan Anda.</p>
+                <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}><i className="fa-solid fa-server" style={{ color: 'var(--primary-blue)', marginRight: '10px' }}></i> Core System</h3>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.6' }}>Welcome back hacker, <strong style={{color: 'var(--primary-blue)'}}>{user.email}</strong>. You are in the exclusive zone. Full control of the portfolio system is in your hands.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                     <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="btn-github" style={{ justifyContent: 'center' }}>
-                        <i className="fa-solid fa-database"></i> Buka Konsol Supabase
+                        <i className="fa-solid fa-database"></i> Open Supabase Console
                     </a>
                 </div>
             </div>
 
             <div className="contact-form" style={{ padding: '2rem' }}>
-                <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}><i className="fa-solid fa-shield-halved" style={{ color: 'var(--primary-blue)', marginRight: '10px' }}></i> Status Keamanan</h3>
+                <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}><i className="fa-solid fa-shield-halved" style={{ color: 'var(--primary-blue)', marginRight: '10px' }}></i> Security Status</h3>
                 <ul style={{ color: 'var(--text-secondary)', lineHeight: '2', listStyle: 'none' }}>
-                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Edge Middleware Aktif</li>
-                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Enkripsi Sandi Supabase</li>
+                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Edge Middleware Active</li>
+                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Supabase Password Encryption</li>
                     <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Server-Side Cookie Parser</li>
-                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Pendaftaran Publik Ditutup</li>
+                    <li><i className="fa-solid fa-check-circle" style={{ color: '#52c41a', marginRight: '8px' }}></i> Public Registration Closed</li>
                 </ul>
             </div>
         </div>
@@ -61,7 +61,7 @@ export default async function DeveloperDashboard() {
         <ProjectManager initialProjects={projects || []} />
         
         <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-             <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '3px' }}>&larr; Cek Tampilan Layar Publik (Beranda)</Link>
+             <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '3px' }}>&larr; Check Public Screen View (Home)</Link>
          </div>
       </div>
     </div>

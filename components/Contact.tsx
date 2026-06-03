@@ -7,7 +7,7 @@ export default function Contact() {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setResult("Membuka WhatsApp...");
+    setResult("Opening WhatsApp...");
     
     const formElement = event.currentTarget;
     const formData = new FormData(formElement);
@@ -17,7 +17,7 @@ export default function Contact() {
     const message = formData.get("message") || "";
     
     const waNumber = "6285881971927"; // User's WhatsApp number
-    const text = `Halo Faris!\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+    const text = `Hi Faris!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
     const encodedText = encodeURIComponent(text);
     
     // Buka link WhatsApp di tab baru
@@ -36,7 +36,7 @@ export default function Contact() {
             <ScrollReveal>
                 <div className="contact-header">
                     <h2 className="section-title">Get In Touch.</h2>
-                    <p>Mencari talenta digital berbakat? Silakan tinggalkan pesan untuk mendiskusikan peluang karir terhebat Anda!</p>
+                    <p>Looking for digital talent? Please leave a message to discuss your next great opportunity!</p>
                     <div className="social-3d-icons">
                         <a href="#" className="social-icon"><i className="fa-solid fa-envelope"></i></a>
                         <a href="#" className="social-icon"><i className="fa-brands fa-linkedin-in"></i></a>
@@ -48,15 +48,15 @@ export default function Contact() {
             <ScrollReveal>
                 <form className="contact-form" onSubmit={onSubmit}>
                     <div className="form-group">
-                        <input type="text" name="name" placeholder="Nama Anda" className="form-control" required />
+                        <input type="text" name="name" placeholder="Your Name" className="form-control" required />
                     </div>
                     <div className="form-group">
-                        <input type="email" name="email" placeholder="Email Terhubung" className="form-control" required />
+                        <input type="email" name="email" placeholder="Your Email" className="form-control" required />
                     </div>
                     <div className="form-group">
-                        <textarea name="message" placeholder="Tuliskan Pesan..." rows={4} className="form-control" required></textarea>
+                        <textarea name="message" placeholder="Write your message..." rows={4} className="form-control" required></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary btn-submit">Kirim Pesan <i className="fa-solid fa-paper-plane"></i></button>
+                    <button type="submit" className="btn btn-primary btn-submit">Send Message <i className="fa-solid fa-paper-plane"></i></button>
                 </form>
                 {result && <p style={{ marginTop: "1rem", color: "#4facfe", fontWeight: "bold", textAlign: "center" }}>{result}</p>}
             </ScrollReveal>

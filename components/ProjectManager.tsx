@@ -47,14 +47,14 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Apakah Anda yakin ingin menghapus proyek ini?')) return
+    if (!confirm('Are you sure you want to delete this project?')) return
     
     setIsSubmitting(true)
     const res = await deleteProject(id)
     if (res.success) {
-      window.location.reload() // Paling gampang untuk update UI dashboard
+      window.location.reload()
     } else {
-      setMessage('Eror saat menghapus: ' + res.error)
+      setMessage('Error deleting: ' + res.error)
       setIsSubmitting(false)
     }
   }
@@ -70,7 +70,7 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
       setIsFormOpen(false)
       window.location.reload()
     } else {
-      setMessage('Eror saat menyimpan: ' + res.error)
+      setMessage('Error saving: ' + res.error)
       setIsSubmitting(false)
     }
   }
@@ -78,13 +78,13 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
   return (
     <div className="project-manager-container" style={{ marginTop: '2rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h3 style={{ color: 'var(--text-primary)', fontSize: '1.4rem' }}>Daftar Proyek Portofolio</h3>
+        <h3 style={{ color: 'var(--text-primary)', fontSize: '1.4rem' }}>Portfolio Project List</h3>
         <button 
           onClick={handleAddNew}
           className="btn btn-primary"
           style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}
         >
-          <i className="fa-solid fa-plus"></i> Tambah Proyek
+          <i className="fa-solid fa-plus"></i> Add Project
         </button>
       </div>
 
@@ -99,10 +99,10 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
         <table style={{ width: '100%', borderCollapse: 'collapse', color: 'var(--text-primary)' }}>
           <thead>
             <tr style={{ borderBottom: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.02)' }}>
-              <th style={{ padding: '1rem', textAlign: 'left' }}>Nama Proyek</th>
-              <th style={{ padding: '1rem', textAlign: 'left' }}>Kategori</th>
+              <th style={{ padding: '1rem', textAlign: 'left' }}>Project Name</th>
+              <th style={{ padding: '1rem', textAlign: 'left' }}>Category</th>
               <th style={{ padding: '1rem', textAlign: 'center' }}>Featured</th>
-              <th style={{ padding: '1rem', textAlign: 'right' }}>Aksi</th>
+              <th style={{ padding: '1rem', textAlign: 'right' }}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -122,14 +122,14 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
                     <i className="fa-solid fa-pen-to-square"></i> Edit
                   </button>
                   <button onClick={() => handleDelete(p.id)} style={{ background: 'transparent', border: 'none', color: '#ff4d4f', cursor: 'pointer' }}>
-                    <i className="fa-solid fa-trash"></i> Hapus
+                    <i className="fa-solid fa-trash"></i> Delete
                   </button>
                 </td>
               </tr>
             )) : (
               <tr>
                 <td colSpan={4} style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
-                  Belum ada proyek yang ditambahkan.
+                  No projects added yet.
                 </td>
               </tr>
             )}
@@ -143,7 +143,7 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
           <div className="contact-form" style={{ width: '90%', maxWidth: '600px', maxHeight: '90vh', overflowY: 'auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)' }}>
-                    {editingProject.id === 'new' ? 'Tambah Proyek' : 'Edit Proyek'}
+                    {editingProject.id === 'new' ? 'Add Project' : 'Edit Project'}
                 </h2>
                 <button onClick={() => setIsFormOpen(false)} style={{ background: 'transparent', border: 'none', color: 'var(--text-secondary)', fontSize: '1.5rem', cursor: 'pointer' }}>&times;</button>
             </div>
@@ -152,39 +152,39 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
               <input type="hidden" name="id" value={editingProject.id} />
               
               <div className="form-group">
-                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Nama Proyek</label>
-                <input type="text" name="display_name" defaultValue={editingProject.display_name} className="form-control" required placeholder="Judul Proyek" />
+                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Project Name</label>
+                <input type="text" name="display_name" defaultValue={editingProject.display_name} className="form-control" required placeholder="Project Title" />
               </div>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <div className="form-group" style={{ flex: 1 }}>
-                    <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Kategori</label>
-                    <input type="text" name="category" defaultValue={editingProject.category} className="form-control" required placeholder="Mis: Security, Data, Web" />
+                    <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Category</label>
+                    <input type="text" name="category" defaultValue={editingProject.category} className="form-control" required placeholder="e.g., Security, Data, Web" />
                 </div>
                 <div className="form-group" style={{ flex: 1 }}>
-                    <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>GitHub Repo ID (Opsional)</label>
+                    <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>GitHub Repo ID (Optional)</label>
                     <input type="number" name="github_repo_id" defaultValue={editingProject.github_repo_id || ''} className="form-control" placeholder="123456789" />
                 </div>
               </div>
 
               <div className="form-group">
-                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>URL Gambar</label>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Image URL</label>
                 <input type="text" name="image_url" defaultValue={editingProject.image_url} className="form-control" placeholder="https://domain.com/image.jpg" />
               </div>
 
               <div className="form-group">
-                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Tech Stack (Pisahkan dengan koma)</label>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Tech Stack (Comma separated)</label>
                 <input type="text" name="tech_stack" defaultValue={editingProject.tech_stack.join(', ')} className="form-control" placeholder="Next.js, Tailwind, Supabase" />
               </div>
 
               <div className="form-group">
-                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Deskripsi Lengkap</label>
-                <textarea name="description_long" defaultValue={editingProject.description_long} className="form-control" rows={4} required placeholder="Jelaskan detail proyek Anda..."></textarea>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Full Description</label>
+                <textarea name="description_long" defaultValue={editingProject.description_long} className="form-control" rows={4} required placeholder="Explain your project in detail..."></textarea>
               </div>
 
               <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <input type="checkbox" name="is_featured" id="is_featured" defaultChecked={editingProject.is_featured} style={{ width: '20px', height: '20px', cursor: 'pointer' }} />
-                <label htmlFor="is_featured" style={{ color: 'var(--text-primary)', cursor: 'pointer' }}>Tampilkan di Beranda (Featured)</label>
+                <label htmlFor="is_featured" style={{ color: 'var(--text-primary)', cursor: 'pointer' }}>Show on Homepage (Featured)</label>
               </div>
 
               <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
@@ -194,7 +194,7 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
                     className="btn btn-github" 
                     style={{ flex: 1, cursor: 'pointer' }}
                 >
-                    Batal
+                    Cancel
                 </button>
                 <button 
                     type="submit" 
@@ -202,7 +202,7 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
                     className="btn btn-primary btn-submit" 
                     style={{ flex: 2, cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.7 : 1 }}
                 >
-                    {isSubmitting ? 'Sedang Menyimpan...' : 'Simpan Proyek'}
+                    {isSubmitting ? 'Saving...' : 'Save Project'}
                 </button>
               </div>
             </form>

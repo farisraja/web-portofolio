@@ -10,14 +10,14 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       <ParticlesBackground />
       <div className="contact-form" style={{ width: '100%', maxWidth: '400px', position: 'relative', zIndex: 1 }}>
          <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', textAlign: 'center' }}>Secure Area.</h2>
-         <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '2rem' }}>Halaman Log In Khusus Developer</p>
+         <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '2rem' }}>Exclusive Developer Login Page</p>
          
          <form action={login}>
             <div className="form-group">
-                <input type="email" name="email" placeholder="Email Terotorisasi" className="form-control" required />
+                <input type="email" name="email" placeholder="Authorized Email" className="form-control" required />
             </div>
             <div className="form-group">
-                <input type="password" name="password" placeholder="Passphrase Rahasia" className="form-control" required />
+                <input type="password" name="password" placeholder="Secret Passphrase" className="form-control" required />
             </div>
             
             {params?.errorMessage && (
@@ -26,11 +26,11 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
                 </div>
             )}
             
-            <button type="submit" className="btn btn-primary btn-submit" style={{ width: '100%', cursor: 'pointer' }}>Buka Enkripsi <i className="fa-solid fa-unlock-keyhole"></i></button>
+            <button type="submit" className="btn btn-primary btn-submit" style={{ width: '100%', cursor: 'pointer' }}>Decrypt & Access <i className="fa-solid fa-unlock-keyhole"></i></button>
          </form>
 
          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-             <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '3px' }}>&larr; Kembali ke Sektor Publik</Link>
+             <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '3px' }}>&larr; Return to Public Sector</Link>
          </div>
       </div>
     </div>

@@ -4,13 +4,13 @@ export default function AboutSkills() {
         <div className="container about-skills-content" style={{flexDirection: 'column', gap: '6rem'}}>
             <div className="about-text" style={{width: '100%'}}>
                 <h2 className="section-title text-center">About Me.</h2>
-                <p className="about-description text-center" style={{maxWidth: '800px', margin: '0 auto 2rem auto'}}>
-                    Lulusan Ilmu Komputer dari <strong>Universitas Pakuan</strong>. Pernah aktif di IEEE dan memiliki minat mendalam pada keamanan siber serta algoritma pemrosesan data.
+                <p className="about-description text-center" style={{maxWidth: '800px', margin: '0 auto 2rem auto', textAlign: 'justify'}}>
+                    I am a fresh graduate with a Bachelor's degree in Computer Science from <strong>Pakuan University</strong> with a GPA of 3.47. I have a deep interest in exploring the Information Technology ecosystem as a whole, focusing not only on information system development but also highly enthusiastic about IT infrastructure and network analysis. Through my experience in system development and infrastructure comprehension (including basic cyber operations and networking), I am accustomed to tackling technical challenges proactively, adaptively, and with strong initiative. I possess excellent communication skills for effective team collaboration. Currently, I have official approval from my university and am ready to fully commit to an internship program.
                 </p>
                 <div className="about-highlights" style={{justifyContent: 'center'}}>
                     <div className="highlight-item">
                         <i className="fa-solid fa-graduation-cap"></i>
-                        <span>Ilmu Komputer</span>
+                        <span>Computer Science</span>
                     </div>
                     <div className="highlight-item">
                         <i className="fa-solid fa-shield-halved"></i>
@@ -61,7 +61,7 @@ export default function AboutSkills() {
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" style={{width: '32px'}} title="Python" />
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-plain.svg" style={{width: '32px'}} title="Jupyter" />
                         </div>
-                        <p>Visualisasi Data, Processing Algoritma</p>
+                        <p>Data Visualization, Algorithm Processing</p>
                     </div>
                 </div>
             </div>

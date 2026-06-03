@@ -7,13 +7,13 @@ export default function Hero() {
         <div className="glow-orb"></div>
         <div className="container hero-content">
             <div className="hero-text">
-                <h1 className="headline">Halo, saya Faris Raja Ardana.</h1>
+                <h1 className="headline">Hi, I'm Faris Raja Ardana.</h1>
                 <div style={{ minHeight: "80px", marginBottom: "1.5rem" }}>
                     <TypeAnimation
                         sequence={[
-                            'Lulusan Ilmu Komputer yang antusias membangun solusi digital.', 2000,
-                            'Berfokus pada Keamanan Jaringan dan Analisis Data.', 2000,
-                            'Menyulap ide menjadi kode yang futuristik dan aman.', 2000
+                            'An enthusiastic Computer Science graduate building digital solutions.', 2000,
+                            'Focused on Network Security and Data Analysis.', 2000,
+                            'Turning ideas into futuristic and secure code.', 2000
                         ]}
                         wrapper="p"
                         speed={50}

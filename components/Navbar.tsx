@@ -63,7 +63,7 @@ export default function Navbar() {
           <li><Link href="#about" className={activeItem === "about" ? "active" : ""} onClick={() => setActiveItem("about")}>About</Link></li>
           <li><Link href="#skills" className={activeItem === "skills" ? "active" : ""} onClick={() => setActiveItem("skills")}>Skills</Link></li>
           <li><Link href="#project" className={activeItem === "project" ? "active" : ""} onClick={() => setActiveItem("project")}>Project</Link></li>
-          <li><Link href="#sertifikat" className={activeItem === "sertifikat" ? "active" : ""} onClick={() => setActiveItem("sertifikat")}>Sertifikat</Link></li>
+          <li><Link href="#sertifikat" className={activeItem === "sertifikat" ? "active" : ""} onClick={() => setActiveItem("sertifikat")}>Certifications</Link></li>
           <li><Link href="#contact" className={activeItem === "contact" ? "active" : ""} onClick={() => setActiveItem("contact")}>Contact</Link></li>
           
           <button 

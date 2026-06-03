@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Faris | Tech Portfolio",
+  title: "Web Portofolio",
   description: "Senior Full-Stack Developer Portfolio showcasing Next.js and Supabase integration.",
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="en">
       <body className={`${inter.variable} ${poppins.variable}`}>{children}</body>
     </html>
   );
