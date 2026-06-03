@@ -65,6 +65,8 @@ const projectEnhancements: Record<string, { displayName: string; description: st
 export default async function Projects() {
   let githubRepos: any[] = [];
   
+  let apiSuccess = false;
+  
   try {
     const githubRes = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=20`,
@@ -76,14 +78,18 @@ export default async function Projects() {
       }
     );
     if (githubRes.ok) {
-      githubRepos = await githubRes.json();
+      const data = await githubRes.json();
+      if (Array.isArray(data) && data.length > 0) {
+        githubRepos = data;
+        apiSuccess = true;
+      }
     }
   } catch (e) {
     console.error("GitHub API Fetch Failed:", e);
   }
 
-  // Bypass cache secara manual untuk repositori yang sangat baru (agar langsung muncul)
-  if (!githubRepos.find(r => r.name === 'web-portofolio')) {
+  // Bypass cache secara manual untuk repositori yang sangat baru (agar langsung muncul di data API)
+  if (apiSuccess && !githubRepos.find(r => r.name === 'web-portofolio')) {
     githubRepos.unshift({
       id: 1258430348,
       name: 'web-portofolio',
@@ -94,7 +100,7 @@ export default async function Projects() {
   }
 
   // Gabungkan data GitHub dengan enhancement manual
-  const projects = githubRepos.length > 0 
+  const projects = apiSuccess 
     ? githubRepos.map((repo: any) => {
         const enhancement = projectEnhancements[repo.name];
         return {
@@ -107,8 +113,9 @@ export default async function Projects() {
           icon: enhancement?.icon || 'fa-solid fa-code',
         };
       })
-    : // Fallback statis jika GitHub API tidak bisa diakses
+    : // Fallback statis jika GitHub API tidak bisa diakses (Rate limit dll)
       [
+        { id: 8, name: 'Futuristic Web Portfolio', description: 'A futuristic, high-performance personal portfolio built with Next.js 16. Features a Glassmorphism UI, Dark/Light mode, Supabase authentication, and live GitHub API integration.', category: 'Web Application', techStack: ['TypeScript', 'Next.js', 'Supabase'], githubUrl: 'https://github.com/farisraja/web-portofolio', icon: 'fa-solid fa-laptop-code' },
         { id: 1, name: 'PB. Cipta Badminton League', description: 'A modern web application to manage badminton competitions, rankings, and team distributions professionally and fairly.', category: 'Web Application', techStack: ['TypeScript', 'Next.js', 'Vercel'], githubUrl: 'https://github.com/farisraja/pb-cipta-sports', icon: 'fa-solid fa-trophy' },
         { id: 2, name: 'Comparison of Apriori, FP-Growth & ECLAT Algorithms', description: 'Data mining algorithm research to find purchase patterns in market basket datasets.', category: 'Data Mining', techStack: ['Python', 'Data Mining', 'Apriori'], githubUrl: 'https://github.com/farisraja/analisis_keranjang_belanja_2026', icon: 'fa-solid fa-chart-line' },
         { id: 3, name: 'Profile Screen - Flutter UI', description: 'User profile interface design using Flutter and Dart.', category: 'Mobile Development', techStack: ['Dart', 'Flutter'], githubUrl: 'https://github.com/farisraja/profile_screen', icon: 'fa-solid fa-user-circle' },
