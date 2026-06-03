@@ -82,6 +82,17 @@ export default async function Projects() {
     console.error("GitHub API Fetch Failed:", e);
   }
 
+  // Bypass cache secara manual untuk repositori yang sangat baru (agar langsung muncul)
+  if (!githubRepos.find(r => r.name === 'web-portofolio')) {
+    githubRepos.unshift({
+      id: 1258430348,
+      name: 'web-portofolio',
+      description: 'A futuristic, high-performance personal portfolio built with Next.js 16.',
+      language: 'TypeScript',
+      html_url: 'https://github.com/farisraja/web-portofolio'
+    });
+  }
+
   // Gabungkan data GitHub dengan enhancement manual
   const projects = githubRepos.length > 0 
     ? githubRepos.map((repo: any) => {
